@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>User</h1>
+                <h1>Users</h1>
             </div>
         </div>
     </div>
@@ -40,11 +40,17 @@
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->email }}</td>
                                     <td>
-                                        <form action="{{ route('user.destroy', $item->id) }}" method="post">
-                                        @csrf
-                                        @method('delete')
-                                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                                        </form>
+                                        <div class="d-flex">
+                                            <button type="button" class="btn btn-warning mr-3" data-toggle="modal" data-target="#updateUser{{ $item->id }}"><i class="fa fa-edit"></i>
+                                            </button>
+                                            @include('pages.user.update')
+
+                                            <form action="{{ route('user.destroy', $item->id) }}" method="post">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                            </form>
+                                        </div>
                                     </td>
                                 </tr>
                                 <?php $i++ ?>

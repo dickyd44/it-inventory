@@ -45,7 +45,7 @@ class UserController extends Controller
 
         User::create($data);
 
-        return redirect()->back()->with('success', 'Data user berhasil di tambahkan!');
+        return redirect()->back()->with('success', 'Data user berhasil di Tambahkan!');
     }
 
     /**
@@ -79,7 +79,16 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+
+        if(empty($data['password'])){
+            unset($data['password']);
+        } else {
+            $data['password'] = Hash::make($data['password']);
+        }
+
+        User::find($id)->update($data);
+        return redirect()->back()->with('success', 'Data user berhasil di Ubah!');
     }
 
     /**

@@ -17,7 +17,7 @@
                     class="img-circle user-image"
                     src="https://cdn-icons-png.flaticon.com/128/1077/1077114.png"
                 />
-                <span class="hidden-xs">Administrator</span>
+                <span class="hidden-xs">{{ request()->session()->get('user')['name'] }}</span>
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <a href="/ganti-password" class="dropdown-item">

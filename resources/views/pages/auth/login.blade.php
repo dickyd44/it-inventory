@@ -1,5 +1,7 @@
 @extends('layouts.auth') @section('content')
+
 <div class="login-box">
+    @include('includes.error-card')
     <!-- /.login-logo -->
     <div class="card card-outline card-danger">
         <div class="card-header text-center">
@@ -14,9 +16,11 @@
         <div class="card-body">
             <p class="login-box-msg">Sign in to start your session</p>
 
-            <form action="../../index3.html" method="post">
+            <form action="/login" method="post">
+                @csrf
                 <div class="input-group mb-3">
                     <input
+                        name="email"
                         type="email"
                         class="form-control"
                         placeholder="Email"
@@ -29,6 +33,7 @@
                 </div>
                 <div class="input-group mb-3">
                     <input
+                        name="password"
                         type="password"
                         class="form-control"
                         placeholder="Password"
