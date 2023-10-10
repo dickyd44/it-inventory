@@ -39,7 +39,13 @@
                                     <td>{{ $i }}</td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $item->email }}</td>
-                                    <td></td>
+                                    <td>
+                                        <form action="{{ route('user.destroy', $item->id) }}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                        </form>
+                                    </td>
                                 </tr>
                                 <?php $i++ ?>
                                 @endforeach

@@ -45,7 +45,7 @@ class UserController extends Controller
 
         User::create($data);
 
-        return redirect()->back()->with('success', 'data user berhasil di tambahkan!');
+        return redirect()->back()->with('success', 'Data user berhasil di tambahkan!');
     }
 
     /**
@@ -90,6 +90,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::find($id)->delete();
+
+        return redirect()->back()->with('success', 'Data user berhasil di Hapus!');
     }
 }
