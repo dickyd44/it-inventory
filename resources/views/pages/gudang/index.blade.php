@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Users</h1>
+                <h1>Gudang</h1>
             </div>
         </div>
     </div>
@@ -19,16 +19,17 @@
                 <div class="card">
                     <!-- /.card-header -->
                     <div class="card-body">
-                        <button type="button" class="btn bg-navy" data-toggle="modal" data-target="#createUser"><i class="fa fa-plus"></i>
+                        <button type="button" class="btn bg-navy" data-toggle="modal" data-target="#createGudang"><i class="fa fa-plus"></i>
                             Tambah
                         </button>
-                        @include('pages.user.create')
+                        @include('pages.gudang.create')
                         <table id="table-primary" class="table table-bordered table-hover">
                             <thead>
                                 <tr>
                                     <th>No</th>
                                     <th>Nama</th>
-                                    <th>Email</th>
+                                    <th>Type</th>
+                                    <th>Alamat</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -38,10 +39,11 @@
                                 <tr>
                                     <td>{{ $i }}</td>
                                     <td>{{ $item->name }}</td>
-                                    <td>{{ $item->email }}</td>
+                                    <td>{{ $item->type }}</td>
+                                    <td>{{ $item->address }}</td>
                                     <td>
                                         <div class="d-flex">
-                                            <button type="button" class="btn btn-warning mr-3" data-toggle="modal" data-target="#updateUser{{ $item->id }}"><i class="fa fa-edit"></i>
+                                            <button type="button" class="btn btn-warning mr-3" data-toggle="modal" data-target="#updateGudang{{ $item->id }}"><i class="fa fa-edit"></i>
                                             </button>
                                             @include('pages.user.update')
 

@@ -14,7 +14,11 @@ class GudangController extends Controller
      */
     public function index()
     {
-        //
+        $items = Gudang::all();
+
+        return view('pages.gudang.index', [
+            'items' => $items
+        ]);
     }
 
     /**
@@ -35,7 +39,9 @@ class GudangController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Gudang::create($data);
+        return redirect()->back()->with('success', 'Gudang berhasil di Tambahkan!');
     }
 
     /**
@@ -78,8 +84,9 @@ class GudangController extends Controller
      * @param  \App\Models\Gudang  $gudang
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Gudang $gudang)
+    public function destroy($id)
     {
-        //
+        Gudang::find($id)->delete();
+        return redirect()->back()->with('success', 'Gudang berhasil di Hapus!');
     }
 }
