@@ -47,7 +47,7 @@
                                             </button>
                                             @include('pages.user.update')
 
-                                            <form action="{{ route('user.destroy', $item->id) }}" method="post">
+                                            <form action="{{ route('gudang.destroy', $item->id) }}" method="post">
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
