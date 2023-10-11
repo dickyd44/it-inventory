@@ -3,7 +3,8 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Gudang</h1>
+                <h1>Detail Gudang {{ $gudang->name }}</h1>
+                <p>Jenis {{ $gudang->type }}</p>
             </div>
         </div>
     </div>
@@ -33,7 +34,7 @@
                                     <th>Action</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            {{-- <tbody>
                                 <?php $i = 1 ?>
                                 @foreach ($items as $item)
                                 <tr>
@@ -43,9 +44,7 @@
                                     <td>{{ $item->address }}</td>
                                     <td>
                                         <div class="d-flex">
-                                            <a href="{{ route('gudang.show', $item->id) }}" class="btn btn-primary mr-2"><i class="fa fa-eye"></i></a>
-
-                                            <button type="button" class="btn btn-warning mr-2" data-toggle="modal" data-target="#updateGudang{{ $item->id }}"><i class="fa fa-edit"></i>
+                                            <button type="button" class="btn btn-warning mr-3" data-toggle="modal" data-target="#updateGudang{{ $item->id }}"><i class="fa fa-edit"></i>
                                             </button>
                                             @include('pages.gudang.update')
 
@@ -59,7 +58,7 @@
                                 </tr>
                                 <?php $i++ ?>
                                 @endforeach
-                            </tbody>
+                            </tbody> --}}
                         </table>
                         </>
                         <!-- /.card-body -->

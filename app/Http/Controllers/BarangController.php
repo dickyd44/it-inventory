@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Gudang;
+use App\Models\Barang;
 use Illuminate\Http\Request;
 
-class GudangController extends Controller
+class BarangController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +14,7 @@ class GudangController extends Controller
      */
     public function index()
     {
-        $items = Gudang::all();
-
-        return view('pages.gudang.index', [
-            'items' => $items
-        ]);
+        //
     }
 
     /**
@@ -39,33 +35,27 @@ class GudangController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $request->all();
-        Gudang::create($data);
-        return redirect()->back()->with('success', 'Gudang berhasil di Tambahkan!');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Gudang  $gudang
+     * @param  \App\Models\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Barang $barang)
     {
-        $gudang = Gudang::find($id)->first();
-
-        return view('pages.gudang.detail', [
-            'gudang' => $gudang
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Gudang  $gudang
+     * @param  \App\Models\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function edit(Gudang $gudang)
+    public function edit(Barang $barang)
     {
         //
     }
@@ -74,25 +64,22 @@ class GudangController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Gudang  $gudang
+     * @param  \App\Models\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Barang $barang)
     {
-        $data = $request->all();
-        Gudang::find($id)->update($data);
-        return redirect()->back()->with('success', 'Gudang berhasil di Ubah!');
+        //
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Gudang  $gudang
+     * @param  \App\Models\Barang  $barang
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Barang $barang)
     {
-        Gudang::find($id)->delete();
-        return redirect()->back()->with('success', 'Gudang berhasil di Hapus!');
+        //
     }
 }
