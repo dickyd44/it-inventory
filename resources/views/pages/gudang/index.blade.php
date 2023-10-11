@@ -45,7 +45,7 @@
                                         <div class="d-flex">
                                             <button type="button" class="btn btn-warning mr-3" data-toggle="modal" data-target="#updateGudang{{ $item->id }}"><i class="fa fa-edit"></i>
                                             </button>
-                                            @include('pages.user.update')
+                                            @include('pages.gudang.update')
 
                                             <form action="{{ route('gudang.destroy', $item->id) }}" method="post">
                                             @csrf

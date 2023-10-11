@@ -16,11 +16,11 @@
                         <input type="text" class="form-control" id="InputName" name="name" required>
                     </div>
                     <div class="form-group">
-                        <label for="InputEmail">Type</label>
+                        <label for="InputType">Type</label>
                         <input type="text" class="form-control" id="InputType" name="type" required>
                     </div>
                     <div class="form-group">
-                        <label for="InputPassword">Alamat</label>
+                        <label for="InputAddress">Alamat</label>
                         <input type="text" class="form-control" id="InputAddress" name="address" required>
                     </div>
                 </div>

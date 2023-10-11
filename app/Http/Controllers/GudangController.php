@@ -73,9 +73,11 @@ class GudangController extends Controller
      * @param  \App\Models\Gudang  $gudang
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Gudang $gudang)
+    public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        Gudang::find($id)->update($data);
+        return redirect()->back()->with('success', 'Gudang berhasil di Ubah!');
     }
 
     /**
